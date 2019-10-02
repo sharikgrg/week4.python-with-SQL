@@ -29,7 +29,7 @@ while True:
     print(record)
 
 # Q4 - Select all of the entries where the Company name has a z or a Z in the table of Customers
-order_zcompany = cursor.execute("select * FROM Customers WHERE CompanyName like '%z%' or CompanyName like %Z% ")
+order_zcompany = cursor.execute("select * FROM Customers WHERE CompanyName like '%z%' or CompanyName like '%Z%' ")
 while True:
     record = order_zcompany.fetchone()
     if record is None:
