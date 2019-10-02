@@ -46,32 +46,30 @@ class ConnectMsS():
         return sum(prices)/len(prices)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     # CRUD
 
     # Create 1 entry
         # use Insert
         # the cursor cannot make transaction ( go to documentation)
+    
 
     # Read all entries
         # Fetch all record and return as a list of dictionaries
+    def read_all_entries(self, table):
+        query_rows = self.__filter_query(f"SELECT * FROM {table}")
+        while True:
+            record = query_rows.fetchone()
+            if record is None:
+                break
+            return record
+
     # Read one entry
         # Fetch specific record
         # Get one value using ID
+    def read_one_entry(self, table, ID, number): # table to specify table, ID to specify which ID, number to specify which number
+        query = self.__filter_query(f"SELECT * FROM {table} WHERE {ID} = {int(number)}")
+        return query.fetchone()
+
 
     # Update 1 entry
         # the ID of the record to update

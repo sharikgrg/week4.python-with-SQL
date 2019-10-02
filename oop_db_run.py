@@ -15,3 +15,6 @@ print(db_nw.cursor.execute("SELECT * FROM Products").fetchone())
 print(db_nw.sql_query_fetchone("SELECT * FROM Products"))
 print(db_nw.print_all_products_records('Products'))
 print(db_nw.return_avg_price_products())
+
+print(db_nw.read_one_entry('Products', 'ProductID', 2))
+print(db_nw.read_all_entries('Products'))
